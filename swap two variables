@@ -1,0 +1,8 @@
+a=input("enter first number:")   
+a=int(a)
+b=input("enter second number:")
+b=int(b)
+a=a+b
+b=a-b
+a=a-b
+print("first number:",a,"\n","second number:",b)
