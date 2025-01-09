@@ -1,0 +1,9 @@
+a=input("enter a number:")
+a=int(a)
+b=1
+while a>0:
+    b=b*a
+    a=a-1
+
+print("factorial of given number",b,sep='=',end='.')    
+    
