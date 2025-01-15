@@ -1,0 +1,34 @@
+T=input("enter of test cases(T):")
+T=int(T)
+b=0
+while b<T:
+   print(b+1,"case")
+   N=input("enter of boxes(N):")
+   N=int(N)
+   S=input("enter of swaps(S):")
+   S=int(S)
+   X=input("enter beginning number of gold coin(X):")
+   X=int(X)
+   i=1
+   a=[0]*N
+   while i<N+1:
+      if i==X:
+        a[i-1]=1
+      i=i+1
+   k=0
+   while k<S:
+     print(k+1,"swap\n")
+     A=int(input("enter first box:"))
+     B=int(input("enter second box:"))
+     if a[A-1]|a[B-1]==1:
+        a[A-1],a[B-1]=a[B-1],a[A-1]
+     k=k+1
+   j=1
+   while j<N+1:
+      if a[j-1]==1:
+         print("gold coin is ",j,"box")
+      j=j+1
+   b=b+1
+
+
+
