@@ -1,0 +1,25 @@
+n=int(input("enter last integer"))
+list=[]
+list_1=[]
+list_2=[]
+list_3=[]
+list_4=[]
+list_5=[]
+for i in range(n):
+    list.append(i+1)
+for i in range(n):
+    if list[i]%5==1 :
+        list_1.append(list[i])
+    elif  list[i]%5==2 :
+        list_2.append(list[i]) 
+    elif  list[i]%5==3 :
+        list_3.append(list[i]) 
+    elif  list[i]%5==4 :
+        list_4.append(list[i]) 
+    else :
+        list_5.append(list[i]) 
+print(list_1,"\n")
+print(list_2,"\n")
+print(list_3,"\n")
+print(list_4,"\n")
+print(list_5,"\n")
