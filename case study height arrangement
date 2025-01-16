@@ -1,0 +1,13 @@
+a=int(input("enter no.of guests\n"))
+s=[]
+for i in range(a):
+   e=int(input(f"enter height of {i+1}: ").format(int))
+   s.append(e)
+d=0
+print(s)
+for i in range(a):
+    if s[i]!=i+1:
+        c=s.index(i+1)
+        s[i],s[c]=s[c],s[i]
+        d=d+1
+print("no.of swaps required=",d)
