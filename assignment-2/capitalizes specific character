@@ -1,0 +1,10 @@
+def function(b,i):
+    if i%2==0:
+        return b.lower()
+    else:
+        return b.upper()
+a=input("enter a word:")
+s=""
+for i in range(len(a)):
+    s+=function(a[i],i)
+print(s)
