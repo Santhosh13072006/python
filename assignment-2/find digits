@@ -2,7 +2,7 @@ a=input("enter a number:")
 b=int(a)
 c=0
 for i in range(len(a)):
-   if a[i]!=0:
+   if int(a[i])!=0:
        if b%int(a[i])==0:
            c=c+1
 print(c)
