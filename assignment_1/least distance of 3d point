@@ -1,0 +1,36 @@
+x=input("enter x-coordinates of your points saperated by a space\n")
+y=input("enter y-coordinates of your points saperated by a space\n")
+z=input("enter z-coordinates of your points saperated by a space\n")
+l1=tuple(map(int,x.split()))
+print(l1)
+l2=tuple(map(int,y.split()))
+l3=tuple(map(int,z.split()))
+l=list(zip(l1,l2,l3))
+print(l)
+s=[]
+def distance(t1,t2):
+
+    d=((t1[0]-t2[0])**2+(t1[1]-t2[1])**2+(t1[2]-t2[2]**2)**0.5)
+    return(d)
+
+for i in range(3):
+    g=complex(0)
+    k=1
+    m=complex(0)
+    o=0
+    for j in range(3):
+        if i!=j:
+           k=k+1
+           g=distance(l[i],l[j])
+           if k==2 and abs(g)>abs(m):
+                m=g
+                o=j
+           else:
+               if abs(g)<abs(m):
+                 m=g
+                 o=j
+    s.append(l[o])      
+print(s)
+print("the leastdistance of 3d point is_zipped to corresponding point")
+c=list(zip(l,s))
+        
