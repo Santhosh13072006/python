@@ -1,0 +1,9 @@
+a=int(input("enter of products you will enter:"))
+d={}
+for i in range(a):
+  d[input("enter a product name:")]=float(input("enter price of product:"))
+i=1
+while i>0:
+     print(d.get(input("enter product name:"),"product not found"))
+  
+  
