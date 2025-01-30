@@ -1,6 +1,6 @@
-def function(s,a):
+def function(s,a,start,end):
     A=-1
-    for i in range(0,len(s)):
+    for i in range(start,end):
        if s[i]==a[0]:
             k=i
             c=0
@@ -12,6 +12,13 @@ def function(s,a):
     return A 
 s=input ("enter a string\n")
 a=input("enter a string to be found\n")
-d=function(s,a)
+start=int(input("enter starting point "))
+"""from where we need to start"""
+end=int(input("enter ending point "))
+if start<0:
+    start=0
+if end>len(s):
+    end=len(s)
+d=function(s,a,start,end)
 print("index where it is found",d)
      
