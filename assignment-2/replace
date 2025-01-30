@@ -1,0 +1,30 @@
+def function(s,a,start,end):
+    k=-1
+    for i in range(start,end):
+       if s[i]==a[0]:
+            k=i
+            c=0
+            for j in range(0,len(a)):
+                if k+j<len(s) and s[k+j]==a[j]:
+                    c=c+1
+            if c==len(a):
+                break;
+    return k 
+s=input ("enter a string\n")
+a=input("enter a string to be found\n")
+b=input("enter a string to be replaced")
+start=int(input("enter starting point "))
+print("the of given string is",len(s))
+"""from where we need to start"""
+end=int(input("enter ending point "))
+if start<0:
+    start=0
+if end>len(s):
+    end=len(s)
+d=function(s,a,start,end)
+if d!=-1:
+   f=s[:d]+b+s[d+len(a):]
+   print(f)
+else:
+    print("string not found")
+     
