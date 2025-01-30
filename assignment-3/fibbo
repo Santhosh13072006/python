@@ -1,0 +1,23 @@
+
+def fibbo(n):
+    a=0
+    b=1
+    c=0
+    k=-1
+    if n!=a or n!=b:
+        while c<=n:
+            c=a+b
+            if n==c:
+               k=0
+               print("ISFIBO")
+               break;
+            else :
+               a=b
+               b=c
+    else:
+        print("IS NOT FIBO")
+    return k
+n=int(input("enter a number "))
+d=fibbo(n)
+if d!=0:
+    print("IS NOT FIBBO")
