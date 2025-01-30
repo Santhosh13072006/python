@@ -1,0 +1,15 @@
+def sum1(n):
+    a=0 
+    while n!=0:
+       a=n%10+a
+       n=n/10
+    return a
+n=int(input("enter a number "))
+i=1
+while 0<i :
+    c=sum1(n)
+    if c/10==0:
+       print("sum is equal to ",c)
+       break
+    else:
+        n=c
