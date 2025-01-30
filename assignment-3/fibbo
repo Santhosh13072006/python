@@ -9,13 +9,13 @@ def fibbo(n):
             c=a+b
             if n==c:
                k=0
-               print("ISFIBO")
+               print("IS FIBO")
                break;
             else :
                a=b
                b=c
     else:
-        print("IS NOT FIBO")
+        print("IS FIBO")
     return k
 n=int(input("enter a number "))
 d=fibbo(n)
