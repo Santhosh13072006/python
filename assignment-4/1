@@ -1,0 +1,12 @@
+t=int(input("enter number of test cases"))
+for j  in range(t):
+     s=input("enter a string:");
+     a=0
+     for i in range(len(s)//2):
+         if ord(s[i])!=ord(s[len(s)-1-i]):
+              if(ord(s[i])>ord(s[len(s)-1-i])):
+                   print("palindrome is not possible")
+                   break
+              else:
+                   a=a+ord(s[len(s)-1-i])-ord(s[i])
+print(a)
