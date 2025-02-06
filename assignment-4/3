@@ -1,0 +1,16 @@
+s=input("enter a string:")
+a=1
+for i in range(96,123):
+    c=s.count(chr(i))
+    if c>1:
+        a=0
+        break
+for j in range(65,91):
+    c=s.count(chr(i))
+    if c>1:
+        a=0
+        break
+if a==1:
+   print("anagram")
+else :
+   print("not anagram")
