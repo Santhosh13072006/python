@@ -13,7 +13,7 @@ for i in range(t):
             break
     
     if a!=-1 and b !=-1:
-        g=s[b+1:a]+s[b]
+        g=s[b+1:a]+s[b]+s[a+1:len(s)]
         sorted_g=''.join(sorted(g))
         s=s[:b]+s[a]+sorted_g
         print(s)
