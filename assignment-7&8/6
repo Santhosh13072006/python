@@ -1,0 +1,25 @@
+class Bankaccount:
+      def __init__(self,name_1):
+          self.name=name_1
+          self.account=123456
+          self.balance=500
+      def deposit(self,amount):
+             self.balance=self.balance+amount 
+      def withdrawal(self,amount):
+          if amount<self.balance:
+             self.balance=self.balance-amount 
+          else:
+              print("not possible available balance is",self.balance)
+      def display(self):
+                print("name",self.name)
+                print("account number",self.account)
+                print("Avl balance",self.balance)
+s=input("enter your name:")
+testing=Bankaccount(s)
+testing.display()
+print("\n")
+testing.deposit(500)
+testing.display()
+print("\n")
+testing.withdrawal(2000)
+testing.display()
