@@ -1,0 +1,64 @@
+import random
+class game:
+    def __init__(self,n):
+        self.list=[random.randint(0,2) for _ in range(n)]
+        self.count=0
+    def value(self,s):
+        if s=="scissors":
+            return 2
+        elif s=="rock":
+            return 0
+        else:
+            return 1
+    def start(self):
+        for i in range (len(self.list)):
+            print("this is  round",i+1)
+            s=input("enter your chioce:")
+            a=self.value(s)
+            if a==0:  
+                if self.list[i]==1:
+                    print("your chioce",s)
+                    print("computer chioce paper")
+                    print("computer wins in this round")
+                elif self.list[i]==2:
+                    print("your chioce",s)
+                    print("computer chioce scissors")
+                    print("you wins in this round")
+                    self.count+=1
+                else:
+                    print("it is a draw")
+            if a==1:  
+                if self.list[i]==2:
+                    print("your chioce",s)
+                    print("computer chioce scissors")
+                    print("computer wins in this round")
+                elif self.list[i]==0:
+                    print("your chioce",s)
+                    print("computer chioce rock")
+                    print("you wins in this round")
+                    self.count+=1
+                else:
+                    print("it is a draw")
+            if a==2:  
+                if self.list[i]==0:
+                    print("your chioce",s)
+                    print("computer chioce rock")
+                    print("computer wins in this round")
+                elif self.list[i]==1:
+                    print("your chioce",s)
+                    print("computer chioce paper")
+                    print("you wins in this round")
+                    self.count+=1
+                else:
+                    printf("it is a draw")
+r=int(input("enter number of rounds:"))
+g=game(r)
+g.start()
+print("number of rounds you win",g.count)
+
+        
+   
+        
+    
+    
+        
