@@ -1,0 +1,32 @@
+class Password_manager:
+    def __init__(self):
+        self.old_passwords=[1,2,'san']
+    def set_passsword(self,password):
+        if password not in self.old_passwords:
+            self.old_passwords.append(password)
+            return bool(1)
+        else:
+            print("password is already used ")
+            return bool(0)
+    def get(self):
+          return (self.old_passwords[len(self.old_passwords)-1])
+    def change(self):
+        password=input("enter password:")
+        if self.old_passwords[len(self.old_passwords)-1]!=None:
+               if password==self.old_passwords[len(self.old_passwords)-1]:
+                        a=self.set_passsword(input("enter a new password:"))
+                        print(a)
+               else:
+                    print("not changed")
+        else:
+            a=self.set_passsword(password)
+            print(a)
+pass1=Password_manager()
+pass1.change()
+print(pass1.get())
+        
+   
+        
+    
+    
+        
