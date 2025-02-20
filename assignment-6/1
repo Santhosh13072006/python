@@ -1,6 +1,6 @@
 class Password_manager:
     def __init__(self):
-        self.old_passwords=[1,2,'san']
+        self.old_passwords=['s','2','san']
     def set_passsword(self,password):
         if password not in self.old_passwords:
             self.old_passwords.append(password)
