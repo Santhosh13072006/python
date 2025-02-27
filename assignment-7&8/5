@@ -1,0 +1,29 @@
+class shape:
+    def __init__ (self,*args):
+        self.l=[*args]
+    def perimeter(self):
+       c=0
+       for i in range(len((self.l))):
+           c=c+self.l[i]
+       return c
+class rectangle(shape):
+    def __init__(self,*args):
+       self.length=args[0]
+       self.breadth=args[1]
+       self.l=[*args]
+    def area(self):
+        return self.length* self.breadth
+class circle(shape):
+     def __init__(self,data):
+         self.radius=data
+     def perimeter(self):
+         return 2* 3.14*self.radius
+     def area(self):
+         return 3.14*(self.radius**2)
+a=rectangle(3,4)
+print("perimeter",2*a.perimeter())
+print("area",a.area())
+b=circle(3)
+print("perimeter",b.perimeter())
+print("area",b.area())
+   
