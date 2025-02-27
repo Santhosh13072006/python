@@ -1,0 +1,87 @@
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+    
+class LinkedList:
+    def __init__(self):
+        self.head = None
+
+    def count(self):
+        temp = self.head
+        c = 0
+        while temp is not None:
+            c += 1
+            temp = temp.next
+        return c
+
+    def insert_at_front(self, data):
+        newnode = Node(data)
+        newnode.next = self.head
+        self.head = newnode
+
+    def insert_at_back(self, data):
+        newnode = Node(data)
+        if self.head is None:
+            self.head = newnode
+        else:
+            temp = self.head
+            while temp.next is not None:
+                temp = temp.next
+            temp.next = newnode
+
+    def insert_at_particular(self, data, index):
+        c = self.count()
+        if index <= 1:
+            self.insert_at_front(data)
+        elif index >= c:
+            self.insert_at_back(data)
+        else:
+            newnode = Node(data)
+            temp = self.head
+            for _ in range(index - 1):
+                temp = temp.next
+            newnode.next = temp.next
+            temp.next = newnode
+
+    def delete_at_front(self):
+        if self.head:
+            self.head = self.head.next
+
+    def delete_at_back(self):
+        if self.head is None:
+            return
+        if self.head.next is None:
+            self.head = None
+            return
+        temp = self.head
+        while temp.next.next is not None:
+            temp = temp.next
+        temp.next = None
+
+    def delete_at_particular(self, index):
+        c = self.count()
+        if index <= 1:
+            self.delete_at_front()
+        elif index >= c:
+            self.delete_at_back()
+        else:
+            temp = self.head
+            for _ in range(index - 2):  
+                temp = temp.next
+            temp.next = temp.next.next
+
+    def display(self):
+        temp = self.head
+        while temp is not None:
+            print(temp.data, end=" -> ")
+            temp = temp.next
+        print("None")
+
+
+ex = LinkedList()
+ex.insert_at_front(2)
+ex.insert_at_front(1)
+ex.insert_at_back(3)
+ex.insert_at_particular(4, 2)
+ex.display()  
