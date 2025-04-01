@@ -1,0 +1,48 @@
+import numpy as np
+def converter_center(s):
+    if len(s)>=15:
+     return s
+    else:
+        c=15-len(s)
+        a=int(c/2)+c%2
+        b=int(c/2)
+        s1=''
+        for i in range(a):
+            s1=s1+'_'
+        s1 += s
+        for j in range(b):
+            s1=s1+'_'
+        return s1
+def converter_left(s):
+    if len(s)>=15:
+     return s
+    else:
+        c=15-len(s)
+        s1=''
+        for i in range(c):
+            s1=s1+'_'
+        s1 += s
+        return s1
+def converter_right(s):
+    if len(s)>=15:
+     return s
+    else:
+        c=15-len(s)
+        s1=''
+        for j in range(c):
+            s1=s1+'_'
+        return s+s1
+        
+a=np.array(["san","an","s"])
+ans = []
+for i in range(a.shape[0]):
+    ans.append(converter_center(a[i]))
+print(np.array(ans))
+lans=[]
+for i in range(a.shape[0]):
+    lans.append(converter_left(a[i]))
+print(np.array(lans))
+rans=[]
+for i in range(a.shape[0]):
+    rans.append(converter_right(a[i]))
+print(np.array(rans))
