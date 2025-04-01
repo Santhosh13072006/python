@@ -1,1 +1,16 @@
-1
+import numpy as np
+import math
+c=np.array([[1,2],[2,3],[3,4]],dtype='f')
+print(c.shape)
+for x in range(c.shape[0]):
+    d=np.array(c[x])
+
+    a=d[0]
+    b=d[1]
+    c[x][0]=(a**2+b**2)**0.5
+    c[x][1]=math.atan(a/b)
+for x in range(c.shape[0]):
+    print (c[x])
+"""
+    here inside the argument the ndim is not working
+"""
