@@ -16,7 +16,7 @@ def converter_center(s):
         for j in range(b):
             s1=s1+'_'
         return s1
-def converter_left(s):
+def converter_right(s):
     if len(s)>=15:
         c=len(s)-15
         return s[c::]
@@ -27,7 +27,7 @@ def converter_left(s):
             s1=s1+'_'
         s1 += s
         return s1
-def converter_right(s):
+def converter_left(s):
     if len(s)>=15:
      return s[:15]
     else:
