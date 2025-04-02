@@ -1,0 +1,43 @@
+import numpy as np
+import copy
+def solve(col,row,board,n):
+    colnumber=col
+    rownumber=row
+    while col>=0 :
+        if board[rownumber][col]=="Q":
+            return False
+        col=col-1
+    col=colnumber
+    row=rownumber
+    while col>=0 and row>=0:
+        if board[row][col]=="Q" :
+            return False
+        col=col-1
+        row=row-1
+    while col>=0 and row <n:
+        if board[row][col]=="Q":
+            return False
+        col=col-1
+        row=row+1
+    return True
+def answer(col,board,ans,n):
+    if col>=n:
+        ans
+        return 
+    for row in range(n):
+        if solve(col,row,board,n):
+           board[row][col]="Q"
+           answer(col+1,board,ans,n)
+           board[row][col]="."
+n=int(input("enter a number:"))
+board = [["."] * n for _ in range(n)]
+ans=[]
+answer(0,board,ans,n)
+for i in ans:
+    for j in i:
+        print(j)
+    print("\n")
+
+    
+
+    
