@@ -1,0 +1,27 @@
+import pandas as pd
+x=pd.Series(['x', 'Y', 'T', 'Aaba', 'Baca', 'CABA', 'bird', "horse", "dog",None])
+
+
+def lower1(y):
+        for i in y.index:
+            if y[i]!=None:
+               y[i]=y[i].lower()
+        return y
+def upper1(y):
+        for i in y.index:
+            if y[i]!=None:
+               y[i]=y[i].upper()
+        return y
+def len1(y):
+        for i in y.index:
+             if y[i]!=None:
+                 y[i]=len(y[i])
+        return y
+
+data={
+       'length':len1(x.copy()),
+        'upper':upper1(x.copy()),
+        'lower':lower1(x.copy()),
+}
+x=pd.DataFrame(data)
+print(x)
