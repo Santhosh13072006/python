@@ -1,1 +1,19 @@
 
+import pandas as pd
+import datetime
+
+dt_a = pd.Timestamp("20")
+print(dt_a)
+dt_b = pd.Timestamp("2012-01-15 21:20:00")
+print(dt_b)
+dt_c = pd.Timestamp.now()
+print(dt_c)
+dt_d = pd.Timestamp.today().normalize()
+print(dt_d)
+dt_e = pd.Timestamp.today().date()
+print(dt_e)
+dt_f = dt_b.time()
+print(dt_f)
+dt_g = datetime.datetime.now().time()
+print(dt_g)
+
