@@ -1,0 +1,20 @@
+import pandas as pd
+from itertools import product
+
+data = {
+    "date": ["2024-01-15", "2024-01-20", "2024-02-10", "2024-02-25", "2024-01-15"],
+    "artist": ["Artist A", "Artist B", "Artist A", "Artist A", "Artist B"],
+    "venue": ["Venue X", "Venue Y", "Venue X", "Venue Y", "Venue X"],
+}
+df = pd.DataFrame(data)
+df["date"] = pd.to_datetime(df["date"])
+df["year_month"] = df["date"].dt.to_period("M")
+artists = df["artist"].unique()
+venues = df["venue"].unique()
+artist_venue_pairs = pd.DataFrame(product(artists, venues), columns=["artist", "venue"])
+concert_counts = df.groupby(["year_month", "artist", "venue"]).size().reset_index(name="count")
+full_data = pd.merge(artist_venue_pairs, concert_counts, on=["artist", "venue"], how="left").fillna(0)
+wide_df = full_data.pivot(index="year_month", columns=["artist", "venue"], values="count").fillna(0)
+wide_df.columns = [f"{artist} @ {venue}" for artist, venue in wide_df.columns]
+wide_df = wide_df.reset_index()
+print(wide_df)
