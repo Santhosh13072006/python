@@ -1,0 +1,58 @@
+import numpy as np
+
+def odd(n, i):
+    a = np.zeros((n, n), dtype=int)
+    j = 0
+    k = n // 2
+
+    for num in range(i, n**2 + i):
+        a[j][k] = num
+        j1 = (j - 1) % n
+        k1 = (k + 1) % n
+
+        if a[j1][k1] == 0:
+            j, k = j1, k1
+        else:
+            j = (j + 1) % n
+    return a
+
+def doubly_even(n):
+    a = np.arange(1, n**2 + 1).reshape((n, n))
+    for i in range(n):
+        for j in range(n):
+            if (i % 4 == j % 4) or ((i + j) % 4 == 3):
+                a[i][j] = n**2 + 1 - a[i][j]
+    return a
+
+def singly_even(n):
+    half = n // 2
+    sub_square = odd(half, 1)
+    magic_square = np.zeros((n, n), dtype=int)
+    add = [0, 2 * half**2, 3 * half**2, half**2]
+    for i in range(half):
+        for j in range(half):
+            magic_square[i][j] = sub_square[i][j] + add[0]
+            magic_square[i][j + half] = sub_square[i][j] + add[1]
+            magic_square[i + half][j] = sub_square[i][j] + add[2]
+            magic_square[i + half][j + half] = sub_square[i][j] + add[3]
+
+    k = (n - 2) // 4
+    for i in range(n):
+        for j in range(n):
+            if (j < k or j >= n - k) and (j != k or i != k):
+                if i < half:
+                    magic_square[i][j], magic_square[i + half][j] = magic_square[i + half][j], magic_square[i][j]
+
+    return magic_square
+
+n = int(input("Enter a number: "))
+
+if n % 2 != 0:
+    result = odd(n, 1)
+elif n % 4 == 0:
+    result = doubly_even(n)
+else:
+    result = singly_even(n)
+
+print("\nMagic Square:")
+print(result)
